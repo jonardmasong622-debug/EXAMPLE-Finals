@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Gay Is James Robert Rojas? 🏳️‍🌈</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background & Overlay -->
+    <div class="background-container">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Floating Rainbow Hearts -->
+    <div class="hearts-container">
+        <div class="heart rainbow-1"></div>
+        <div class="heart rainbow-2"></div>
+        <div class="heart rainbow-3"></div>
+        <div class="heart rainbow-4"></div>
+        <div class="heart rainbow-5"></div>
+        <div class="heart rainbow-6"></div>
+        <div class="heart rainbow-7"></div>
+        <div class="heart rainbow-8"></div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="main-card">
+        <div class="avatar-circle">
+            <span class="avatar-text">JRR</span>
+        </div>
+
+        <h1 class="main-title">James Robert Rojas</h1>
+        <p class="subheading">Just how gay is he? Click the buttons to find out! 🏳️‍🌈✨</p>
+
+        <!-- Interactive Buttons -->
+        <div class="button-group">
+            <button class="interactive-btn" onclick="showLevel()">
+                <span class="btn-icon">🌈</span>
+                <span class="btn-text">Official Gay Level</span>
+                <span class="btn-arrow">→</span>
+            </button>
+
+            <button class="interactive-btn" onclick="showVibe()">
+                <span class="btn-icon">💖</span>
+                <span class="btn-text">His Vibe & Energy</span>
+                <span class="btn-arrow">→</span>
+            </button>
+
+            <button class="interactive-btn" onclick="showVerdict()">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Final Verdict</span>
+                <span class="btn-arrow">→</span>
+            </button>
+
+            <button class="interactive-btn" onclick="showPercentage()">
+                <span class="btn-icon">📊</span>
+                <span class="btn-text">Cuteness & Gay %</span>
+                <span class="btn-arrow">→</span>
+            </button>
+        </div>
+
+        <!-- Result Display Box -->
+        <div id="resultBox" class="result-box">
+            Click any button above to see the result!
+        </div>
+
+        <p class="footer-note">Made with love & pride — 2026</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showLevel() {
+            const box = document.getElementById('resultBox');
+            box.innerHTML = `<strong>OFFICIAL LEVEL:</strong><br>100% GAY — No doubt, no questions! He is proudly, happily, and absolutely gay, and it’s one of his best qualities. 💅✨`;
+            box.className = 'result-box active';
+        }
+
+        function showVibe() {
+            const box = document.getElementById('resultBox');
+            box.innerHTML = `<strong>HIS VIBE:</strong><br>He brings color, joy, sparkle, and amazing energy everywhere he goes. Confident, stylish, kind, and totally unapologetic about who he is. 🌟💖`;
+            box.className = 'result-box active';
+        }
+
+        function showVerdict() {
+            const box = document.getElementById('resultBox');
+            box.innerHTML = `<strong>FINAL VERDICT:</strong><br>MAXIMUM GAYNESS ACHIEVED! ✅🏳️‍🌈<br>James Robert Rojas is the definition of pride, fabulousness, and being true to himself. Everyone loves him for it!`;
+            box.className = 'result-box active verdict';
+        }
+
+        function showPercentage() {
+            const box = document.getElementById('resultBox');
+            // Random fun percentage
+            const gayPercent = Math.floor(Math.random() * 11) + 90; // 90–100%
+            const cutePercent = 100;
+            box.innerHTML = `<strong>STATISTICS:</strong><br>🏳️‍🌈 Gayness: ${gayPercent}%<br>🥰 Cuteness: ${cutePercent}%<br>✨ Fabulousness: 1000%<br>He’s perfect in every way!`;
+            box.className = 'result-box active stats';
+        }
+    </script>
+</body>
+</html>

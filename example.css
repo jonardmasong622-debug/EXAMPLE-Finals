@@ -1,0 +1,252 @@
+/* === BASE RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* === BACKGROUND === */
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1516550893923-42d28e5677af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    filter: grayscale(20%) brightness(0.6);
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(0, 128, 255, 0.15), rgba(255, 204, 0, 0.15));
+    z-index: -1;
+}
+
+/* === FLOATING RAINBOW HEARTS === */
+.hearts-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    transform: rotate(45deg);
+    animation: floatHearts 8s linear infinite;
+    opacity: 0.75;
+    border-radius: 4px;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.heart::before { top: -11px; left: 0; }
+.heart::after { top: 0; left: -11px; }
+
+/* Rainbow colors */
+.rainbow-1 { background: #ff0000; }
+.rainbow-1::before, .rainbow-1::after { background: #ff0000; }
+.rainbow-2 { background: #ff8800; }
+.rainbow-2::before, .rainbow-2::after { background: #ff8800; }
+.rainbow-3 { background: #ffdd00; }
+.rainbow-3::before, .rainbow-3::after { background: #ffdd00; }
+.rainbow-4 { background: #00bb22; }
+.rainbow-4::before, .rainbow-4::after { background: #00bb22; }
+.rainbow-5 { background: #0088ff; }
+.rainbow-5::before, .rainbow-5::after { background: #0088ff; }
+.rainbow-6 { background: #8833ff; }
+.rainbow-6::before, .rainbow-6::after { background: #8833ff; }
+.rainbow-7 { background: #ff33cc; }
+.rainbow-7::before, .rainbow-7::after { background: #ff33cc; }
+.rainbow-8 { background: #ffcc00; }
+.rainbow-8::before, .rainbow-8::after { background: #ffcc00; }
+
+/* Positions & delays */
+.heart:nth-child(1) { left: 12%; animation-delay: 0s; animation-duration: 7s; }
+.heart:nth-child(2) { left: 28%; animation-delay: 1s; animation-duration: 9s; }
+.heart:nth-child(3) { left: 42%; animation-delay: 2s; animation-duration: 8s; }
+.heart:nth-child(4) { left: 58%; animation-delay: 0.5s; animation-duration: 10s; }
+.heart:nth-child(5) { left: 72%; animation-delay: 3s; animation-duration: 7.5s; }
+.heart:nth-child(6) { left: 86%; animation-delay: 1.5s; animation-duration: 8.5s; }
+.heart:nth-child(7) { left: 20%; animation-delay: 2.5s; animation-duration: 6.5s; }
+.heart:nth-child(8) { left: 65%; animation-delay: 0.8s; animation-duration: 9.5s; }
+
+@keyframes floatHearts {
+    0% { transform: translateY(100vh) rotate(45deg) scale(0.7); opacity: 0.5; }
+    100% { transform: translateY(-100px) rotate(45deg) scale(1.2); opacity: 0; }
+}
+
+/* === MAIN GLASS CARD === */
+.main-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    padding: 45px 35px;
+    width: 380px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.main-card:hover {
+    transform: translateY(-6px);
+}
+
+/* === AVATAR === */
+.avatar-circle {
+    width: 85px;
+    height: 85px;
+    background: linear-gradient(135deg, #ff0080, #0088ff, #ffcc00);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* === HEADINGS === */
+.main-title {
+    font-size: 27px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.subheading {
+    font-size: 15px;
+    font-weight: 300;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* === INTERACTIVE BUTTONS === */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.interactive-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.interactive-btn:hover {
+    background: linear-gradient(90deg, #ff0080, #0088ff, #ffcc00);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+}
+
+.btn-icon {
+    font-size: 18px;
+}
+
+.btn-arrow {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* === RESULT BOX === */
+.result-box {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e8e8e8;
+    min-height: 80px;
+    transition: all 0.4s ease;
+}
+
+.result-box.active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.result-box.verdict {
+    background: linear-gradient(90deg, #ff0080, #0088ff, #ffcc00);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.result-box.stats {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffcc00;
+}
+
+/* === FOOTER === */
+.footer-note {
+    font-size: 12px;
+    color: #d0d0d0;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 420px) {
+    .main-card {
+        width: 92%;
+        padding: 30px 22px;
+    }
+}
